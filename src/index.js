@@ -1,4 +1,3 @@
-
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
@@ -16,33 +15,33 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.get('/', (req, res) => {
-  res.status(200).send("<h1>Test server</h1>")
+    res.status(200).send("<h1>Test server</h1>")
 })
 
 app.post('/login', (req, res) => {
-  const myUser = {
-    email: 'frare.esteban@gmail.com',
-    password: '123123'
-  }
-  if (req.body.email !== myUser.email) {
-    return res.status(400).send({
-      error: true,
-      message: "Email is not registered"
+    const myUser = {
+        email: 'micaela_iribarren@hotmail.com',
+        password: '123'
+    }
+    if (req.body.email !== myUser.email) {
+        return res.status(400).send({
+            error: true,
+            message: "Email is not registered"
+        })
+    }
+    if (req.body.password !== myUser.password) {
+        return res.status(400).send({
+            error: true,
+            message: "Password is not correct"
+        })
+    }
+    return res.status(200).send({
+        success: true,
+        message: 'User logged successfully',
+        user: myUser,
     })
-  }
-  if (req.body.password !== myUser.password) {
-    return res.status(400).send({
-      error: true,
-      message: "Password is not correct"
-    })
-  }
-  return res.status(200).send({
-    success: true,
-    message: 'User logged successfully',
-    user: myUser,
-  })
 })
 
 app.listen(process.env.PORT || 4000, () => {
-  console.log('Servidor corriendo en puerto 4000')
+    console.log('Servidor corriendo en puerto 4000')
 })
