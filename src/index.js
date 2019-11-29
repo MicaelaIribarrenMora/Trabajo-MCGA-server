@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const app = express()
 
-// const url = 'mongodb+srv://esteban:123calculadora@cluster0-ovnju.mongodb.net/test?retryWrites=true&w=majority';
+// const url = 'mongodb+srv://miribarren:mvzn098@cluster0-yrmwz.mongodb.net/test?retryWrites=true&w=majority';
 
 // mongoose.connect(url, { useNewUrlParser: true }, function (error) {
 //   console.log(error)
